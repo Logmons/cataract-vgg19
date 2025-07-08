@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Détection de Cataracte</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        function showLoader() {
+            document.getElementById("loader").style.display = "block";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Plateforme de Détection de la Cataracte</h1>
+        <form action="/" method="post" enctype="multipart/form-data" onsubmit="showLoader()">
+            <input type="file" name="file" required>
+            <button type="submit">Analyser l'image</button>
+        </form>
+        {% if result %}
+        <div class="result {{ result_class }}">
+            <h2>{{ result }}</h2>
+        </div>
+        {% endif %}
+</body>
+</html>

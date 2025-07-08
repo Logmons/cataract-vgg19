@@ -1,0 +1,10 @@
+.env/
+env/
+.venv/
+.venv38/
+.idea/
+*.keras
+__pycache__/
+*.pyc
+
+input/
